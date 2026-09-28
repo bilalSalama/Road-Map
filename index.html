@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoadMap - .NET Full-Stack Learning Path</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <!-- ==========================================
+      Navigation Bar
+      ========================================== -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="icon">R</div>
+      <span>RoadMap</span>
+    </div>
+    <ul class="navbar-nav">
+      <li><a href="index.html" class="active">Roadmap</a></li>
+      <li><a href="todo.html">Todo List</a></li>
+    </ul>
+  </nav>
+
+  <!-- ==========================================
+      Main Content
+      ========================================== -->
+  <main class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <span class="hero-badge">.NET Full-Stack Developer</span>
+      <h1>Your Learning Roadmap</h1>
+      <p>
+        A complete, step-by-step guide from C# fundamentals to ASP.NET Core Web API,
+        React/Next.js frontend, and cloud deployment. Track every topic you complete.
+      </p>
+    </section>
+
+    <!-- Overall Progress -->
+    <section class="progress-section">
+      <div class="progress-header">
+        <h2>Overall Progress</h2>
+        <div class="progress-stats">
+          <span id="progress-text">0 / 0 items completed</span>
+        </div>
+      </div>
+      <div class="progress-bar-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+      <div class="progress-footer">
+        <span>Start your journey</span>
+        <span id="progress-percent">0%</span>
+      </div>
+    </section>
+
+    <!-- Roadmap Stages -->
+    <h2 class="section-title">Roadmap Stages</h2>
+    <div id="roadmap-grid" class="roadmap-grid">
+      <!-- Cards are rendered by JavaScript -->
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>RoadMap &copy; 2026 &mdash; Built for aspiring .NET Full-Stack Developers</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
