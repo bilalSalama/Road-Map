@@ -6,42 +6,58 @@
 /* --- CSS Variables --- */
 :root {
   /* ---- Backgrounds (Blue Gray family) ---- */
-  --bg-primary:   #263238;  /* Blue Gray 900 — deepest surface */
-  --bg-secondary: #37474F;  /* Blue Gray 800 — elevated panels */
-  --bg-card:      #455A64;  /* Blue Gray 700 — cards */
-  --bg-card-hover:#546E7A;  /* Blue Gray 600 — card hover */
-  --bg-input:     #263238;  /* Blue Gray 900 — input fields */
-  --bg-elevated:  #37474F;  /* Blue Gray 800 — modals, overlays */
+  --bg-primary: #263238;
+  /* Blue Gray 900 — deepest surface */
+  --bg-secondary: #37474F;
+  /* Blue Gray 800 — elevated panels */
+  --bg-card: #455A64;
+  /* Blue Gray 700 — cards */
+  --bg-card-hover: #546E7A;
+  /* Blue Gray 600 — card hover */
+  --bg-input: #263238;
+  /* Blue Gray 900 — input fields */
+  --bg-elevated: #37474F;
+  /* Blue Gray 800 — modals, overlays */
 
   /* ---- Text (Gray family, light → dark) ---- */
-  --text-primary:   #FAFAFA;  /* Gray 50   — headings, strong text */
-  --text-secondary: #E0E0E0;  /* Gray 300  — body, labels */
-  --text-muted:     #9E9E9E;  /* Gray 500  — placeholders, hints */
+  --text-primary: #FAFAFA;
+  /* Gray 50   — headings, strong text */
+  --text-secondary: #E0E0E0;
+  /* Gray 300  — body, labels */
+  --text-muted: #9E9E9E;
+  /* Gray 500  — placeholders, hints */
 
   /* ---- Accent (Deep Orange family) ---- */
-  --accent-primary:  #FF5722; /* Deep Orange 500 — main accent */
-  --accent-hover:    #F4511E; /* Deep Orange 700 — hover state   */
-  --accent-glow:     rgba(255, 87, 34, 0.22);
+  --accent-primary: #FF5722;
+  /* Deep Orange 500 — main accent */
+  --accent-hover: #F4511E;
+  /* Deep Orange 700 — hover state   */
+  --accent-glow: rgba(255, 87, 34, 0.22);
 
   /* ---- Semantic tones (sourced from palette) ---- */
-  --accent-success: #FFAB91;  /* Deep Orange 300 — completed, done */
-  --accent-warning: #A1887F;  /* Brown 400       — warnings       */
-  --accent-danger:  #E64A19;  /* Deep Orange 700 — danger, delete */
+  --accent-success: #FFAB91;
+  /* Deep Orange 300 — completed, done */
+  --accent-warning: #A1887F;
+  /* Brown 400       — warnings       */
+  --accent-danger: #E64A19;
+  /* Deep Orange 700 — danger, delete */
 
   /* ---- Borders (Blue Gray / Gray) ---- */
-  --border-color:  #546E7A;  /* Blue Gray 600 — primary borders */
-  --border-light:  #607D8B;  /* Blue Gray 500 — subtle borders  */
+  --border-color: #546E7A;
+  /* Blue Gray 600 — primary borders */
+  --border-light: #607D8B;
+  /* Blue Gray 500 — subtle borders  */
 
   /* ---- Shadows ---- */
-  --shadow:    0 4px 16px rgba(0, 0, 0, 0.55);
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.55);
   --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.45);
   --shadow-glow: 0 0 20px var(--accent-glow);
 
   /* ---- Radii & transitions ---- */
-  --radius:      10px;
-  --radius-sm:   6px;
+  --radius: 10px;
+  --radius-sm: 6px;
   --radius-full: 9999px;
-  --transition:  0.2s ease;
+  --transition: 0.2s ease;
   --transition-slow: 0.35s ease;
 
   /* ---- Typography (slightly larger than default) ---- */
@@ -49,15 +65,24 @@
     "Helvetica Neue", Arial, sans-serif;
   --font-mono: "SF Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
 
-  --text-xs:   0.78rem;   /* ~12.5px */
-  --text-sm:   0.88rem;   /* ~14px   */
-  --text-base: 1rem;      /* ~16px   */
-  --text-md:   1.12rem;   /* ~18px   */
-  --text-lg:   1.28rem;   /* ~20.5px */
-  --text-xl:   1.55rem;   /* ~25px   */
-  --text-2xl:  2.1rem;    /* ~34px   */
-  --text-3xl:  2.6rem;    /* ~42px   */
-  --text-4xl:  3.1rem;    /* ~50px   */
+  --text-xs: 0.78rem;
+  /* ~12.5px */
+  --text-sm: 0.88rem;
+  /* ~14px   */
+  --text-base: 1rem;
+  /* ~16px   */
+  --text-md: 1.12rem;
+  /* ~18px   */
+  --text-lg: 1.28rem;
+  /* ~20.5px */
+  --text-xl: 1.55rem;
+  /* ~25px   */
+  --text-2xl: 2.1rem;
+  /* ~34px   */
+  --text-3xl: 2.6rem;
+  /* ~42px   */
+  --text-4xl: 3.1rem;
+  /* ~50px   */
 }
 
 /* ============================================
@@ -73,7 +98,8 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 107%;  /* ~17.1px body base — slightly larger */
+  font-size: 107%;
+  /* ~17.1px body base — slightly larger */
 }
 
 body {
@@ -89,13 +115,23 @@ body {
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
 ::-webkit-scrollbar-thumb {
   background: var(--border-color);
   border-radius: 4px;
 }
-::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
 
 /* Text selection */
 ::selection {
@@ -115,7 +151,10 @@ a {
   text-decoration: none;
   transition: color var(--transition);
 }
-a:hover { color: var(--accent-hover); }
+
+a:hover {
+  color: var(--accent-hover);
+}
 
 /* ============================================
    Navigation
@@ -216,11 +255,9 @@ a:hover { color: var(--accent-hover); }
   inset: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(
-    ellipse at center,
-    var(--accent-glow) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(ellipse at center,
+      var(--accent-glow) 0%,
+      transparent 70%);
   opacity: 0.35;
   pointer-events: none;
 }
@@ -383,20 +420,26 @@ a:hover { color: var(--accent-hover); }
   box-shadow: var(--shadow);
 }
 
-.stage-card:hover::before { background: var(--accent-primary); }
+.stage-card:hover::before {
+  background: var(--accent-primary);
+}
 
 .stage-card.completed {
   border-color: rgba(255, 171, 145, 0.35);
 }
 
-.stage-card.completed::before { background: var(--accent-success); }
+.stage-card.completed::before {
+  background: var(--accent-success);
+}
 
 .stage-card.completed .stage-checkbox {
   background: var(--accent-success);
   border-color: var(--accent-success);
 }
 
-.stage-card.completed .stage-checkbox::after { opacity: 1; }
+.stage-card.completed .stage-checkbox::after {
+  opacity: 1;
+}
 
 /* --- Stage Header --- */
 .stage-header {
@@ -428,7 +471,10 @@ a:hover { color: var(--accent-hover); }
   color: var(--accent-success);
 }
 
-.stage-info { flex: 1; min-width: 0; }
+.stage-info {
+  flex: 1;
+  min-width: 0;
+}
 
 .stage-title {
   font-size: var(--text-lg);
@@ -445,7 +491,9 @@ a:hover { color: var(--accent-hover); }
 }
 
 /* --- Stage mini progress --- */
-.stage-progress-mini { margin-top: 0.75rem; }
+.stage-progress-mini {
+  margin-top: 0.75rem;
+}
 
 .stage-progress-text {
   font-size: var(--text-sm);
@@ -486,7 +534,9 @@ a:hover { color: var(--accent-hover); }
   background: var(--bg-secondary);
 }
 
-.stage-checkbox:hover { border-color: var(--accent-primary); }
+.stage-checkbox:hover {
+  border-color: var(--accent-primary);
+}
 
 .stage-checkbox::after {
   content: "";
@@ -497,7 +547,10 @@ a:hover { color: var(--accent-hover); }
   transition: opacity var(--transition);
 }
 
-.stage-checkbox.checked::after { content: "✓"; opacity: 1; }
+.stage-checkbox.checked::after {
+  content: "✓";
+  opacity: 1;
+}
 
 .topics-list {
   display: flex;
@@ -527,7 +580,9 @@ a:hover { color: var(--accent-hover); }
   background: var(--bg-secondary);
 }
 
-.topic-checkbox:hover { border-color: var(--accent-primary); }
+.topic-checkbox:hover {
+  border-color: var(--accent-primary);
+}
 
 .topic-checkbox.checked {
   background: var(--accent-success);
@@ -549,8 +604,13 @@ a:hover { color: var(--accent-hover); }
   line-height: 1.5;
 }
 
-.topic-item:hover .topic-text { color: var(--text-primary); }
-.topic-checkbox.checked ~ .topic-text { color: var(--text-primary); }
+.topic-item:hover .topic-text {
+  color: var(--text-primary);
+}
+
+.topic-checkbox.checked~.topic-text {
+  color: var(--text-primary);
+}
 
 /* --- Detail sections --- */
 .stage-details {
@@ -559,8 +619,13 @@ a:hover { color: var(--accent-hover); }
   border-top: 1px solid var(--border-color);
 }
 
-.detail-section { margin-bottom: 1rem; }
-.detail-section:last-child { margin-bottom: 0; }
+.detail-section {
+  margin-bottom: 1rem;
+}
+
+.detail-section:last-child {
+  margin-bottom: 0;
+}
 
 .detail-label {
   display: block;
@@ -572,7 +637,10 @@ a:hover { color: var(--accent-hover); }
   margin-bottom: 0.5rem;
 }
 
-.projects-list { list-style: none; padding-left: 0; }
+.projects-list {
+  list-style: none;
+  padding-left: 0;
+}
 
 .projects-list li {
   position: relative;
@@ -589,6 +657,75 @@ a:hover { color: var(--accent-hover); }
   left: 0;
   color: var(--accent-primary);
   font-weight: 600;
+}
+
+/* ============================================
+   Backend Stage Extras
+   (goal text, resources, requirements, checklist)
+   ============================================ */
+
+.stage-goal {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.resources-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resources-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.45rem;
+}
+
+.resources-list li::before {
+  content: "↗";
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.resources-list a {
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-color);
+  transition: color var(--transition), border-color var(--transition);
+  word-break: break-word;
+}
+
+.resources-list a:hover {
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+}
+
+.requirements-list li {
+  font-size: var(--text-base);
+}
+
+.requirements-list li::before {
+  content: "▸";
+}
+
+.checklist-list {
+  padding-top: 0.15rem;
+}
+
+.topic-item.check-item .topic-text {
+  color: var(--accent-success);
+}
+
+/* Backend cards get a subtle marker so the two tracks are visually distinct */
+.stage-card.backend .stage-number {
+  font-size: var(--text-base);
+}
+
+.stage-card.backend .detail-label {
+  color: var(--accent-success);
 }
 
 /* ============================================
@@ -624,26 +761,70 @@ a:hover { color: var(--accent-hover); }
   font-size: var(--text-sm);
 }
 
-.footer a { color: var(--accent-primary); }
+.footer a {
+  color: var(--accent-primary);
+}
 
 /* ============================================
    Responsive
    ============================================ */
 @media (max-width: 768px) {
-  .container { padding: 1.25rem; }
-  .hero { padding: 3rem 1.25rem 2.5rem; }
-  .hero h1 { font-size: var(--text-3xl); }
-  .navbar { padding: 0 1.25rem; }
-  .navbar-brand span { display: none; }
-  .roadmap-grid { grid-template-columns: 1fr; }
-  .stage-number { width: 36px; height: 36px; font-size: var(--text-sm); }
-  .progress-section { padding: 1.25rem; }
+  .container {
+    padding: 1.25rem;
+  }
+
+  .hero {
+    padding: 3rem 1.25rem 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: var(--text-3xl);
+  }
+
+  .navbar {
+    padding: 0 1.25rem;
+  }
+
+  .navbar-brand span {
+    display: none;
+  }
+
+  .roadmap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-number {
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-sm);
+  }
+
+  .progress-section {
+    padding: 1.25rem;
+  }
 }
 
 @media (max-width: 480px) {
-  html { font-size: 100%; }
-  .hero h1 { font-size: var(--text-2xl); }
-  .hero p { font-size: var(--text-base); }
-  .navbar-nav a { padding: 0.4rem 0.7rem; font-size: var(--text-xs); }
-  .progress-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  html {
+    font-size: 100%;
+  }
+
+  .hero h1 {
+    font-size: var(--text-2xl);
+  }
+
+  .hero p {
+    font-size: var(--text-base);
+  }
+
+  .navbar-nav a {
+    padding: 0.4rem 0.7rem;
+    font-size: var(--text-xs);
+  }
+
+  .progress-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }

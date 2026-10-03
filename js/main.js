@@ -1,7 +1,10 @@
 /**
  * ============================================
- * RoadMap - Main JavaScript (.NET Full-Stack Path)
+ * RoadMap - Main JavaScript
  * ============================================
+ * This file holds the FRONTEND roadmap (frontendStages) and the shared
+ * renderer. The BACKEND roadmap (Java / Spring Boot / Cloud / AI Agents)
+ * lives in js/backendStages.js as `backendStages`, loaded first by index.html.
  * Handles:
  *   - Roadmap stage rendering with per-item checkboxes
  *   - Individual topic completion tracking
@@ -11,14 +14,13 @@
  */
 
 // -------------------------------------------------------------------------
-// Roadmap Data — 25 stages, .NET Full-Stack path
-// Each stage: { id, title, description, topics: string[], project: string }
+// Roadmap Data — 15 frontend stages (content unchanged).
+// Each stage: { id, track, title, description, topics: string[], project: string }
 // -------------------------------------------------------------------------
 
-const roadmapStages = [
-  // --- 1. Computer Science Foundations ---
-  {
+const frontendStages = [{
     id: "stage-1",
+    track: "frontend",
     title: "Computer Science Foundations",
     description: "Core CS concepts every developer should understand before diving into a framework.",
     topics: [
@@ -36,6 +38,7 @@ const roadmapStages = [
   // --- 2. Programming Fundamentals ---
   {
     id: "stage-2",
+    track: "frontend",
     title: "Programming Fundamentals",
     description: "Universal programming concepts: variables, control flow, functions, and problem-solving.",
     topics: [
@@ -54,6 +57,7 @@ const roadmapStages = [
   // --- 3. Web Fundamentals ---
   {
     id: "stage-3",
+    track: "frontend",
     title: "Web Fundamentals",
     description: "How the web works — essential knowledge for both frontend and backend.",
     topics: [
@@ -71,6 +75,7 @@ const roadmapStages = [
   // --- 4. Git & Professional Development ---
   {
     id: "stage-4",
+    track: "frontend",
     title: "Git & Professional Development",
     description: "Version control, collaboration, and the habits of a professional developer.",
     topics: [
@@ -89,6 +94,7 @@ const roadmapStages = [
   // --- 5. Frontend Foundations — HTML & CSS ---
   {
     id: "stage-5",
+    track: "frontend",
     title: "Frontend Foundations — HTML & CSS",
     description: "Build the visual layer of web applications with semantic HTML and modern CSS.",
     topics: [
@@ -108,6 +114,7 @@ const roadmapStages = [
   // --- 6. JavaScript Fundamentals ---
   {
     id: "stage-6",
+    track: "frontend",
     title: "JavaScript Fundamentals",
     description: "Deep dive into JavaScript — the language of the web.",
     topics: [
@@ -128,6 +135,7 @@ const roadmapStages = [
   // --- 7. TypeScript Basics ---
   {
     id: "stage-7",
+    track: "frontend",
     title: "TypeScript Basics",
     description: "Add static typing to JavaScript for safer, more maintainable code.",
     topics: [
@@ -148,6 +156,7 @@ const roadmapStages = [
   // --- 8. React Fundamentals ---
   {
     id: "stage-8",
+    track: "frontend",
     title: "React Fundamentals",
     description: "Component-based UI development with React.",
     topics: [
@@ -168,6 +177,7 @@ const roadmapStages = [
   // --- 9. Advanced React ---
   {
     id: "stage-9",
+    track: "frontend",
     title: "Advanced React",
     description: "Go deeper with hooks, side effects, and state management patterns.",
     topics: [
@@ -187,6 +197,7 @@ const roadmapStages = [
   // --- 10. Next.js Fundamentals ---
   {
     id: "stage-10",
+    track: "frontend",
     title: "Next.js Fundamentals",
     description: "Production React framework with server-side rendering and file-based routing.",
     topics: [
@@ -207,6 +218,7 @@ const roadmapStages = [
   // --- 11. Tailwind CSS ---
   {
     id: "stage-11",
+    track: "frontend",
     title: "Tailwind CSS",
     description: "Utility-first CSS framework for rapidly building custom interfaces.",
     topics: [
@@ -226,6 +238,7 @@ const roadmapStages = [
   // --- 12. TanStack Query (React Query) ---
   {
     id: "stage-12",
+    track: "frontend",
     title: "TanStack Query",
     description: "Powerful data-fetching and server-state management for React.",
     topics: [
@@ -245,6 +258,7 @@ const roadmapStages = [
   // --- 13. Form Handling — React Hook Form & Zod ---
   {
     id: "stage-13",
+    track: "frontend",
     title: "Form Handling — React Hook Form & Zod",
     description: "Manage forms and validate data with modern libraries.",
     topics: [
@@ -263,6 +277,7 @@ const roadmapStages = [
   // --- 14. Frontend Testing ---
   {
     id: "stage-14",
+    track: "frontend",
     title: "Frontend Testing",
     description: "Ensure your frontend code works as expected with automated tests.",
     topics: [
@@ -281,6 +296,7 @@ const roadmapStages = [
   // --- 15. Frontend Performance & Accessibility ---
   {
     id: "stage-15",
+    track: "frontend",
     title: "Performance & Accessibility",
     description: "Make your frontend fast and usable for everyone.",
     topics: [
@@ -295,230 +311,36 @@ const roadmapStages = [
       "Memoization & re-render optimization"
     ],
     project: "Audit and improve an existing app's performance & a11y"
-  },
-
-  // --- 16. C# Fundamentals ---
-  {
-    id: "stage-16",
-    title: "C# Fundamentals",
-    description: "Learn the C# language — the foundation of .NET development.",
-    topics: [
-      "C# project structure & .csproj",
-      "Variables & data types",
-      "Value types vs reference types",
-      "strings & string interpolation",
-      "Operators",
-      "if/else & switch expressions",
-      "for, foreach, while loops",
-      "Methods & parameters (ref, out, params)",
-      "Arrays",
-      "Collections (List<T>, Dictionary<TKey, TValue>, HashSet<T>)",
-      "Exception handling (try/catch/finally)",
-      "File I/O basics",
-      "null handling & null-coalescing operator",
-      "record types",
-      "top-level statements"
-    ],
-    project: "Console Todo App with file persistence"
-  },
-
-  // --- 17. OOP with C# ---
-  {
-    id: "stage-17",
-    title: "Object-Oriented Programming with C#",
-    description: "Master OOP principles and design classes that model real-world domains.",
-    topics: [
-      "Classes & objects",
-      "Constructors & object initialization",
-      "Encapsulation (access modifiers)",
-      "Inheritance",
-      "Polymorphism (overriding, virtual)",
-      "Abstraction (abstract classes)",
-      "Interfaces & implementation",
-      "Composition vs inheritance",
-      "SOLID principles introduction",
-      "DTOs & domain models",
-      "Method overriding & base keyword"
-    ],
-    project: "Library Management System with inheritance & interfaces"
-  },
-
-  // --- 18. Data Structures & Algorithms ---
-  {
-    id: "stage-18",
-    title: "Data Structures & Algorithms",
-    description: "Write efficient code by understanding common data structures and algorithms.",
-    topics: [
-      "Arrays & Lists performance characteristics",
-      "Stacks & Queues",
-      "Dictionaries / Hash tables",
-      "Linked Lists",
-      "Trees (binary trees, BST basics)",
-      "Graphs basics",
-      "Sorting algorithms (bubble, selection, insertion, merge)",
-      "Searching algorithms (linear, binary)",
-      "Big O notation",
-      "Recursion basics"
-    ],
-    project: "Pathfinding visualizer or contact book with search"
-  },
-
-  // --- 19. SQL & Databases ---
-  {
-    id: "stage-19",
-    title: "SQL & Databases",
-    description: "Store and query data with relational databases.",
-    topics: [
-      "SQL Server basics & installation",
-      "SELECT, INSERT, UPDATE, DELETE",
-      "WHERE & filtering",
-      "ORDER BY, GROUP BY, HAVING",
-      "Joins (INNER, LEFT, RIGHT, FULL)",
-      "Aggregations (COUNT, SUM, AVG, MIN, MAX)",
-      "Subqueries",
-      "Primary keys & foreign keys",
-      "Database design & normalization",
-      "Indexes & performance",
-      "Transactions (BEGIN, COMMIT, ROLLBACK)",
-      "Views & stored procedures basics"
-    ],
-    project: "Design an e-commerce database and write complex queries"
-  },
-
-  // --- 20. LINQ ---
-  {
-    id: "stage-20",
-    title: "LINQ (Language Integrated Query)",
-    description: "Query collections and data with C# syntax — a core .NET skill.",
-    topics: [
-      "LINQ basics & extension methods",
-      "Query syntax vs method syntax",
-      "Filtering with Where",
-      "Projection with Select",
-      "Sorting with OrderBy / ThenBy",
-      "Aggregation (Count, Sum, Average, Min, Max)",
-      "Grouping with GroupBy",
-      "Joining with Join / GroupJoin",
-      "Any, All, Contains, First, Single",
-      "Deferred execution & IEnumerable",
-      "LINQ to Objects vs LINQ to Entities"
-    ],
-    project: "Data analysis tool that processes collections with LINQ"
-  },
-
-  // --- 21. Entity Framework Core ---
-  {
-    id: "stage-21",
-    title: "Entity Framework Core",
-    description: "The official ORM for .NET — work with databases using C# objects.",
-    topics: [
-      "EF Core setup & DbContext",
-      "DbSet & entity configuration",
-      "Code-first approach",
-      "Migrations (add, update, script)",
-      "Relationships (one-to-one, one-to-many, many-to-many)",
-      "Fluent API configuration",
-      "Data annotations",
-      "Querying with LINQ to Entities",
-      "Change tracking",
-      "Insert, update, delete via EF Core",
-      "Eager vs lazy vs explicit loading",
-      "Performance: AsNoTracking, split queries"
-    ],
-    project: "Blog API with EF Core and SQL Server"
-  },
-
-  // --- 22. ASP.NET Core Fundamentals ---
-  {
-    id: "stage-22",
-    title: "ASP.NET Core Fundamentals",
-    description: "The core framework for building web apps and APIs in .NET.",
-    topics: [
-      "ASP.NET Core project structure",
-      "Program.cs & app builder",
-      "Dependency Injection (DI) container",
-      "Service lifetimes (Transient, Scoped, Singleton)",
-      "Middleware pipeline",
-      "Routing (convention-based & attribute)",
-      "Configuration (appsettings.json, environment variables)",
-      "Logging (ILogger, log levels)",
-      "Models & ViewModels",
-      "Model binding basics",
-      "Error handling (exceptions, status codes)",
-      "development vs production configuration"
-    ],
-    project: "Basic Web API with DI, logging, and configuration"
-  },
-
-  // --- 23. ASP.NET Core Web API ---
-  {
-    id: "stage-23",
-    title: "ASP.NET Core Web API",
-    description: "Build RESTful APIs that serve data over HTTP.",
-    topics: [
-      "REST principles & resource naming",
-      "API Controllers & actions",
-      "HTTP methods (GET, POST, PUT, PATCH, DELETE)",
-      "Route parameters & query strings",
-      "Request/response models & serialization",
-      "HTTP status codes",
-      "Content negotiation (JSON by default)",
-      "Swagger / OpenAPI with Swashbuckle",
-      "API versioning basics",
-      "Input validation with Data Annotations & FluentValidation",
-      "ProblemDetails for errors",
-      "File upload/download in APIs"
-    ],
-    project: "Product Catalog REST API with full CRUD"
-  },
-
-  // --- 24. Authentication & Authorization ---
-  {
-    id: "stage-24",
-    title: "Authentication & Authorization",
-    description: "Secure your APIs and control access to resources.",
-    topics: [
-      "Authentication vs authorization",
-      "JWT tokens (access & refresh)",
-      "ASP.NET Core Identity",
-      "Registering users & password hashing",
-      "Role-based access control",
-      "Policy-based authorization",
-      "Securing endpoints with [Authorize]",
-      "OAuth2 / OpenID Connect basics",
-      "Token validation & expiration",
-      "Refresh token flow",
-      " CORS configuration"
-    ],
-    project: "Secure Todo API with JWT authentication"
-  },
-
-  // --- 25. Advanced .NET Backend ---
-  {
-    id: "stage-25",
-    title: "Advanced .NET Backend & Real-World Skills",
-    description: "Production-ready skills: caching, background jobs, real-time, Docker, cloud, testing, and architecture.",
-    topics: [
-      ".NET async/await & Task",
-      "BackgroundService & hosted services",
-      "Hangfire or Quartz for background jobs",
-      "SignalR for real-time communication",
-      "Redis caching with StackExchange.Redis or IDistributedCache",
-      "Exception filters & global exception handling",
-      "Action filters & middleware authoring",
-      "API documentation & versioning",
-      "Integration testing with WebApplicationFactory",
-      "Unit testing with xUnit & Moq",
-      "Dockerizing a .NET API",
-      "Docker Compose for multi-container apps",
-      "CI/CD with GitHub Actions",
-      "Deploying to Azure App Service or AWS",
-      "Environment-specific settings & secrets",
-      "Monitoring & health checks"
-    ],
-    project: "Full production-ready API with auth, caching, background jobs, SignalR, Docker, and CI/CD"
   }
 ];
+
+// -------------------------------------------------------------------------
+// Full roadmap = Frontend track (this file) + Backend track (backendStages.js)
+// -------------------------------------------------------------------------
+
+const roadmapStages = [
+  ...frontendStages,
+  ...(typeof backendStages === "undefined" ? [] : backendStages),
+];
+
+/**
+ * Every tickable item of a stage.
+ * Backend stages expose a richer shape (topics + completion checklist);
+ * frontend stages keep the original topics-only behaviour.
+ */
+function stageItems(stage) {
+  const topics = (stage.topics || []).map((t) => ({
+    id: "t-" + sanitizeItemId(t),
+    label: t,
+    kind: "topic",
+  }));
+  const checklist = (stage.checklist || []).map((c) => ({
+    id: "c-" + sanitizeItemId(c),
+    label: c,
+    kind: "check",
+  }));
+  return topics.concat(checklist);
+}
 
 // -------------------------------------------------------------------------
 // LocalStorage Helpers
@@ -583,62 +405,132 @@ function renderRoadmap() {
   grid.innerHTML = "";
 
   roadmapStages.forEach((stage) => {
+    const items = stageItems(stage);
     const stageCompleted = isStageCompleted(stage.id);
-    const stageItemCount = stage.topics.length;
+    const stageItemCount = items.length;
     const stageCompletedCount = countStageCompleted(stage.id);
+    const isBackend = String(stage.id).startsWith("backend-stage-");
 
     const card = document.createElement("div");
-    card.className = `stage-card${stageCompleted ? " completed" : ""}`;
+    card.className = `stage-card${stageCompleted ? " completed" : ""}${isBackend ? " backend" : ""}`;
     card.dataset.stageId = stage.id;
 
-    // Topics list — each topic gets its own checkbox
-    const topicsHtml = stage.topics
-      .map(
-        (topic, idx) => {
-          const itemId = `${stage.id}:${sanitizeItemId(topic)}`;
-          const checked = completedItems.has(itemId) ? "checked" : "";
-          return `
-            <div class="topic-item" data-item-id="${itemId}">
-              <div class="topic-checkbox ${checked}" data-action="toggle-item" title="Toggle: ${escapeHtml(topic)}"></div>
-              <span class="topic-text">${escapeHtml(topic)}</span>
+    // --- Helper: render one checkbox row ---
+    const renderItem = (item) => {
+      const itemId = `${stage.id}:${item.id}`;
+      const checked = completedItems.has(itemId) ? "checked" : "";
+      const prefix = item.kind === "check" ? "&#10003; " : "";
+      return `
+            <div class="topic-item${item.kind === "check" ? " check-item" : ""}" data-item-id="${itemId}">
+              <div class="topic-checkbox ${checked}" data-action="toggle-item" title="Toggle: ${escapeHtml(item.label)}"></div>
+              <span class="topic-text">${prefix}${escapeHtml(item.label)}</span>
             </div>`;
-        }
-      )
-      .join("");
+    };
 
-    // Stage checkbox (completes all topics in the stage at once)
+    const topicsHtml = items.filter((i) => i.kind === "topic").map(renderItem).join("");
+    const checklistHtml = items.filter((i) => i.kind === "check").map(renderItem).join("");
+
+    // Backend stages carry richer metadata: goal, outcomes, resources, requirements
+    const goalHtml = stage.goal
+      ? `
+        <div class="detail-section">
+          <span class="detail-label">Goal &mdash; What &amp; Why</span>
+          <p class="stage-goal">${escapeHtml(stage.goal)}</p>
+        </div>`
+      : "";
+
+    const outcomesHtml =
+      stage.outcomes && stage.outcomes.length
+        ? `
+        <div class="detail-section">
+          <span class="detail-label">Expected Skills &amp; Outcomes</span>
+          <ul class="projects-list">
+            ${stage.outcomes.map((o) => `<li>${escapeHtml(o)}</li>`).join("")}
+          </ul>
+        </div>`
+      : "";
+
+    const resourcesHtml =
+      stage.resources && stage.resources.length
+        ? `
+        <div class="detail-section">
+          <span class="detail-label">Free Learning Resources</span>
+          <ul class="resources-list">
+            ${stage.resources
+              .map(
+                (r) =>
+                  `<li><a href="${escapeHtml(r.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(r.title)}</a></li>`
+              )
+              .join("")}
+          </ul>
+        </div>`
+      : "";
+
+    const requirementsHtml =
+      stage.requirements && stage.requirements.length
+        ? `
+        <div class="detail-section">
+          <span class="detail-label">Project Requirements</span>
+          <ul class="projects-list requirements-list">
+            ${stage.requirements.map((r) => `<li>${escapeHtml(r)}</li>`).join("")}
+          </ul>
+        </div>`
+        : "";
+
+    const checklistSectionHtml = checklistHtml
+      ? `
+        <div class="detail-section">
+          <span class="detail-label">Completion Checklist &mdash; tick when done</span>
+          <div class="topics-list checklist-list">${checklistHtml}</div>
+        </div>`
+      : "";
+
+    // Stage checkbox (completes everything in the stage at once)
     const stageCheckboxChecked = stageCompleted ? "checked" : "";
+
+    const descriptionHtml = stage.description
+      ? `<div class="stage-description">${escapeHtml(stage.description)}</div>`
+      : "";
+
+    const numberLabel = stage.id.replace(/^backend-stage-/, "B").replace(/^stage-/, "");
 
     card.innerHTML = `
       <div class="stage-header">
-        <div class="stage-number">${stage.id.replace("stage-", "")}</div>
+        <div class="stage-number">${numberLabel}</div>
         <div class="stage-info">
           <div class="stage-title">${escapeHtml(stage.title)}</div>
-          <div class="stage-description">${escapeHtml(stage.description)}</div>
+          ${descriptionHtml}
           <div class="stage-progress-mini">
-            <span class="stage-progress-text">${stageCompletedCount}/${stageItemCount} topics</span>
+            <span class="stage-progress-text">${stageCompletedCount}/${stageItemCount} items</span>
             <div class="stage-progress-bar-container">
-              <div class="stage-progress-bar" style="width: ${stageItemCount === 0 ? 0 : (stageCompletedCount / stageItemCount) * 100}%"></div>
+              <div class="stage-progress-bar" style="width: ${
+                stageItemCount === 0 ? 0 : (stageCompletedCount / stageItemCount) * 100
+              }%"></div>
             </div>
           </div>
         </div>
         <div class="stage-checkbox${stageCheckboxChecked}" data-action="toggle-stage" title="Toggle entire stage"></div>
       </div>
       <div class="stage-details">
+        ${goalHtml}
         <div class="detail-section">
-          <span class="detail-label">Topics to Learn — check each item</span>
+          <span class="detail-label">Topics to Learn &mdash; check each item</span>
           <div class="topics-list">${topicsHtml}</div>
         </div>
+        ${outcomesHtml}
+        ${resourcesHtml}
         <div class="detail-section">
           <span class="detail-label">Practical Project</span>
           <ul class="projects-list">
             <li>${escapeHtml(stage.project)}</li>
           </ul>
         </div>
+        ${requirementsHtml}
+        ${checklistSectionHtml}
       </div>
     `;
 
-    // --- Event: toggle individual topic ---
+    // --- Event: toggle individual item ---
     card.querySelectorAll("[data-action='toggle-item']").forEach((cb) => {
       cb.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -675,7 +567,7 @@ function toggleItem(itemId) {
 }
 
 // -------------------------------------------------------------------------
-// Toggle: entire stage (all topics in the stage)
+// Toggle: entire stage (topics + checklist)
 // -------------------------------------------------------------------------
 
 function toggleStage(stageId) {
@@ -684,8 +576,8 @@ function toggleStage(stageId) {
 
   const isCurrentlyCompleted = isStageCompleted(stageId);
 
-  stage.topics.forEach((topic) => {
-    const itemId = `${stageId}:${sanitizeItemId(topic)}`;
+  stageItems(stage).forEach((item) => {
+    const itemId = `${stageId}:${item.id}`;
     if (isCurrentlyCompleted) {
       completedItems.delete(itemId);
     } else {
@@ -704,18 +596,17 @@ function toggleStage(stageId) {
 
 function isStageCompleted(stageId) {
   const stage = roadmapStages.find((s) => s.id === stageId);
-  if (!stage || stage.topics.length === 0) return false;
-  return stage.topics.every((topic) =>
-    completedItems.has(`${stageId}:${sanitizeItemId(topic)}`)
-  );
+  if (!stage) return false;
+  const items = stageItems(stage);
+  if (items.length === 0) return false;
+  return items.every((item) => completedItems.has(`${stageId}:${item.id}`));
 }
 
 function countStageCompleted(stageId) {
   const stage = roadmapStages.find((s) => s.id === stageId);
   if (!stage) return 0;
-  return stage.topics.filter(
-    (topic) => completedItems.has(`${stageId}:${sanitizeItemId(topic)}`)
-  ).length;
+  const items = stageItems(stage);
+  return items.filter((item) => completedItems.has(`${stageId}:${item.id}`)).length;
 }
 
 // -------------------------------------------------------------------------
@@ -735,9 +626,9 @@ function updateProgressBar() {
   let completedCount = 0;
 
   roadmapStages.forEach((stage) => {
-    totalItems += stage.topics.length;
-    stage.topics.forEach((topic) => {
-      if (completedItems.has(`${stage.id}:${sanitizeItemId(topic)}`)) {
+    stageItems(stage).forEach((item) => {
+      totalItems++;
+      if (completedItems.has(`${stage.id}:${item.id}`)) {
         completedCount++;
       }
     });
