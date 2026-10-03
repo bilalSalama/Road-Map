@@ -4,8 +4,13 @@
  * ============================================
  * Each stage:
  *   { id, title, goal, topics[], outcomes[],
- *     resources[{ title, url }],   // official docs & genuinely free material only
+ *     resources[{ title, url, kind }],  // kind: "doc" | "course"
  *     project, requirements[], checklist[] }
+ *
+ * `kind` drives the button label rendered on each stage card:
+ *   "doc"   -> Documentation button (reference material)
+ *   "course" -> Course button (guided/structured learning)
+ * Only official documentation and genuinely free material is listed.
  *
  * Loaded before js/main.js. Frontend stages live untouched in main.js.
  */
@@ -37,9 +42,9 @@ const backendStages = [
       "Debug a program using breakpoints and read a stack trace top-down"
     ],
     resources: [
-      { title: "Oracle Java Documentation (Java SE)", url: "https://docs.oracle.com/en/java/" },
-      { title: "dev.java — Learn Java (free tutorials)", url: "https://dev.java/learn/" },
-      { title: "Amigoscode — Java Full Course (free)", url: "https://www.youtube.com/watch?v=Qgl81fPcLc8" }
+      { title: "Oracle Java Documentation (Java SE)", url: "https://docs.oracle.com/en/java/", kind: "doc" },
+      { title: "dev.java — Learn Java (free tutorials)", url: "https://dev.java/learn/", kind: "course" },
+      { title: "Amigoscode — Java Full Course (free)", url: "https://www.youtube.com/watch?v=Qgl81fPcLc8", kind: "course" }
     ],
     project: "Console Banking System",
     requirements: [
@@ -86,8 +91,8 @@ const backendStages = [
       "Favour composition when the 'is-a' relationship is weak"
     ],
     resources: [
-      { title: "dev.java — Object-Oriented Programming", url: "https://dev.java/learn/oop/" },
-      { title: "Baeldung — OOP Guides (free)", url: "https://www.baeldung.com/" }
+      { title: "dev.java — Object-Oriented Programming", url: "https://dev.java/learn/oop/", kind: "course" },
+      { title: "Baeldung — OOP Guides (free)", url: "https://www.baeldung.com/", kind: "doc" }
     ],
     project: "OOP-Refactored Banking & Loan Management System",
     requirements: [
@@ -132,8 +137,8 @@ const backendStages = [
       "Write type-safe generic components reusable across entities"
     ],
     resources: [
-      { title: "Oracle — Collections Tutorial", url: "https://docs.oracle.com/javase/tutorial/collections/" },
-      { title: "Baeldung — Java Collections Guides (free)", url: "https://www.baeldung.com/java-collections-arrays" }
+      { title: "Oracle — Collections Tutorial", url: "https://docs.oracle.com/javase/tutorial/collections/", kind: "course" },
+      { title: "Baeldung — Java Collections Guides (free)", url: "https://www.baeldung.com/java-collections-arrays", kind: "doc" }
     ],
     project: "In-Memory Task & Inventory Management System",
     requirements: [
@@ -177,8 +182,8 @@ const backendStages = [
       "Eliminate NullPointerException risk with Optional, without abusing it"
     ],
     resources: [
-      { title: "dev.java — Lambda Expressions & Functional Programming", url: "https://dev.java/learn/lambdas/" },
-      { title: "Baeldung — Java Streams Guides (free)", url: "https://www.baeldung.com/java-8-streams" }
+      { title: "dev.java — Lambda Expressions & Functional Programming", url: "https://dev.java/learn/lambdas/", kind: "course" },
+      { title: "Baeldung — Java Streams Guides (free)", url: "https://www.baeldung.com/java-8-streams", kind: "doc" }
     ],
     project: "In-Memory Library & Analytics Engine",
     requirements: [
@@ -225,8 +230,8 @@ const backendStages = [
       "Produce structured, queryable logs with correlation-ready fields"
     ],
     resources: [
-      { title: "Oracle — Java Language Specification & API (java.time, Records)", url: "https://docs.oracle.com/en/java/" },
-      { title: "Baeldung — Java Exception Handling Guides (free)", url: "https://www.baeldung.com/java-exceptions" }
+      { title: "Oracle — Java Language Specification & API (java.time, Records)", url: "https://docs.oracle.com/en/java/", kind: "doc" },
+      { title: "Baeldung — Java Exception Handling Guides (free)", url: "https://www.baeldung.com/java-exceptions", kind: "doc" }
     ],
     project: "Enterprise Student Information System (Refactored)",
     requirements: [
@@ -273,9 +278,9 @@ const backendStages = [
       "Write a bash script that builds, tests, and packages the project end to end"
     ],
     resources: [
-      { title: "GitHub Docs (free, official)", url: "https://docs.github.com/en" },
-      { title: "Apache Maven — Guides (free, official)", url: "https://maven.apache.org/guides/" },
-      { title: "Linux Journey (free)", url: "https://linuxjourney.com/" }
+      { title: "GitHub Docs (free, official)", url: "https://docs.github.com/en", kind: "doc" },
+      { title: "Apache Maven — Guides (free, official)", url: "https://maven.apache.org/guides/", kind: "doc" },
+      { title: "Linux Journey (free)", url: "https://linuxjourney.com/", kind: "course" }
     ],
     project: "Multi-Module Maven CLI Project with Git Workflow",
     requirements: [
@@ -321,8 +326,8 @@ const backendStages = [
       "Explain every implementation's space/time cost in writing"
     ],
     resources: [
-      { title: "OpenDSA — Data Structures & Algorithms (free)", url: "https://opendsa-server.cs.vt.edu/" },
-      { title: "NeetCode — Free roadmap & curated problems", url: "https://neetcode.io/" }
+      { title: "OpenDSA — Data Structures & Algorithms (free)", url: "https://opendsa-server.cs.vt.edu/", kind: "course" },
+      { title: "NeetCode — Free roadmap & curated problems", url: "https://neetcode.io/", kind: "course" }
     ],
     project: "Algorithmic Problem-Solving Engine & Repository",
     requirements: [
@@ -367,8 +372,8 @@ const backendStages = [
       "Prove transactional correctness with an explicit failure case"
     ],
     resources: [
-      { title: "SQLBolt — Interactive SQL Lessons (free)", url: "https://sqlbolt.com/" },
-      { title: "Mode Analytics SQL Tutorial (free)", url: "https://mode.com/sql-tutorial/" }
+      { title: "SQLBolt — Interactive SQL Lessons (free)", url: "https://sqlbolt.com/", kind: "course" },
+      { title: "Mode Analytics SQL Tutorial (free)", url: "https://mode.com/sql-tutorial/", kind: "course" }
     ],
     project: "Relational Library Database Schema & Queries",
     requirements: [
@@ -414,8 +419,8 @@ const backendStages = [
       "Diagnose a slow endpoint from the database side"
     ],
     resources: [
-      { title: "PostgreSQL Official Tutorial & Docs (free)", url: "https://www.postgresql.org/docs/current/tutorial.html" },
-      { title: "PostgreSQL Wiki (community, free)", url: "https://wiki.postgresql.org/wiki/Main_Page" }
+      { title: "PostgreSQL Official Tutorial & Docs (free)", url: "https://www.postgresql.org/docs/current/tutorial.html", kind: "doc" },
+      { title: "PostgreSQL Wiki (community, free)", url: "https://wiki.postgresql.org/wiki/Main_Page", kind: "doc" }
     ],
     project: "Full E-Commerce Database Engine",
     requirements: [
@@ -464,8 +469,8 @@ const backendStages = [
       "Write a machine-readable API specification before any controller code"
     ],
     resources: [
-      { title: "MDN — HTTP Overview (free, official docs)", url: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview" },
-      { title: "Redocly — RESTful API Design Guide (free)", url: "https://redocly.com/resources/api-design-guide" }
+      { title: "MDN — HTTP Overview (free, official docs)", url: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview", kind: "doc" },
+      { title: "Redocly — RESTful API Design Guide (free)", url: "https://redocly.com/resources/api-design-guide", kind: "doc" }
     ],
     project: "Book & Author REST API Design Specification",
     requirements: [
@@ -511,8 +516,8 @@ const backendStages = [
       "Recognise why field injection hurts testability"
     ],
     resources: [
-      { title: "Spring Framework Documentation (free, official)", url: "https://spring.io/projects/spring-framework" },
-      { title: "Spring Guides (free, official)", url: "https://spring.io/guides" }
+      { title: "Spring Framework Documentation (free, official)", url: "https://spring.io/projects/spring-framework", kind: "doc" },
+      { title: "Spring Guides (free, official)", url: "https://spring.io/guides", kind: "course" }
     ],
     project: "DI-Based Order Processing Core Engine",
     requirements: [
@@ -558,7 +563,7 @@ const backendStages = [
       "Expose health endpoints that a load balancer can trust"
     ],
     resources: [
-      { title: "Spring Boot Reference Documentation (free, official)", url: "https://docs.spring.io/spring-boot/docs/current/reference/html/" }
+      { title: "Spring Boot Reference Documentation (free, official)", url: "https://docs.spring.io/spring-boot/docs/current/reference/html/", kind: "doc" }
     ],
     project: "Production-Ready Spring Boot Application Skeleton",
     requirements: [
@@ -605,8 +610,8 @@ const backendStages = [
       "Ship interactive API docs that match the implementation"
     ],
     resources: [
-      { title: "Spring — REST Tutorial (free, official)", url: "https://spring.io/guides/tutorials/rest/" },
-      { title: "Baeldung — Spring REST Guides (free)", url: "https://www.baeldung.com/spring-tutorial" }
+      { title: "Spring — REST Tutorial (free, official)", url: "https://spring.io/guides/tutorials/rest/", kind: "course" },
+      { title: "Baeldung — Spring REST Guides (free)", url: "https://www.baeldung.com/spring-tutorial", kind: "doc" }
     ],
     project: "Task & Project Management REST API",
     requirements: [
@@ -655,8 +660,8 @@ const backendStages = [
       "Apply cascading rules that cannot silently delete data"
     ],
     resources: [
-      { title: "Hibernate ORM User Guide (free, official)", url: "https://hibernate.org/orm/documentation/" },
-      { title: "Baeldung — JPA & Hibernate Guides (free)", url: "https://www.baeldung.com/jpa-1" }
+      { title: "Hibernate ORM User Guide (free, official)", url: "https://hibernate.org/orm/documentation/", kind: "doc" },
+      { title: "Baeldung — JPA & Hibernate Guides (free)", url: "https://www.baeldung.com/jpa-1", kind: "doc" }
     ],
     project: "Relational Task Manager Data Layer",
     requirements: [
@@ -704,7 +709,7 @@ const backendStages = [
       "Keep transaction boundaries at the service layer, not in the controller"
     ],
     resources: [
-      { title: "Spring Data JPA Documentation (free, official)", url: "https://spring.io/projects/spring-data-jpa" }
+      { title: "Spring Data JPA Documentation (free, official)", url: "https://spring.io/projects/spring-data-jpa", kind: "doc" }
     ],
     project: "Advanced E-Commerce Product Catalog Search Engine",
     requirements: [
@@ -754,8 +759,8 @@ const backendStages = [
       "Explain why CSRF handling differs for token-authenticated APIs"
     ],
     resources: [
-      { title: "Spring Security Reference (free, official)", url: "https://docs.spring.io/spring-security/reference/" },
-      { title: "OWASP Cheat Sheets — Session, JWT, Password Storage (free)", url: "https://cheatsheetseries.owasp.org/" }
+      { title: "Spring Security Reference (free, official)", url: "https://docs.spring.io/spring-security/reference/", kind: "doc" },
+      { title: "OWASP Cheat Sheets — Session, JWT, Password Storage (free)", url: "https://cheatsheetseries.owasp.org/", kind: "doc" }
     ],
     project: "Secure E-Commerce Authentication & RBAC Service",
     requirements: [
@@ -804,9 +809,9 @@ const backendStages = [
       "Keep a suite fast enough that it runs on every commit"
     ],
     resources: [
-      { title: "JUnit 5 User Guide (free, official)", url: "https://junit.org/junit5/docs/current/user-guide/" },
-      { title: "Testcontainers for Java Guides (free, official)", url: "https://java.testcontainers.org/" },
-      { title: "Baeldung — Spring Testing Guides (free)", url: "https://www.baeldung.com/spring-boot-testing" }
+      { title: "JUnit 5 User Guide (free, official)", url: "https://junit.org/junit5/docs/current/user-guide/", kind: "doc" },
+      { title: "Testcontainers for Java Guides (free, official)", url: "https://java.testcontainers.org/", kind: "doc" },
+      { title: "Baeldung — Spring Testing Guides (free)", url: "https://www.baeldung.com/spring-boot-testing", kind: "doc" }
     ],
     project: "Test Suite for E-Commerce Backend Service",
     requirements: [
@@ -855,8 +860,8 @@ const backendStages = [
       "Design invalidation that does not serve stale data past its tolerance"
     ],
     resources: [
-      { title: "Redis Learning Hub — Caching, Rate Limiting (free, official)", url: "https://redis.io/learn/" },
-      { title: "Spring Data Redis Documentation (free, official)", url: "https://spring.io/projects/spring-data-redis" }
+      { title: "Redis Learning Hub — Caching, Rate Limiting (free, official)", url: "https://redis.io/learn/", kind: "course" },
+      { title: "Spring Data Redis Documentation (free, official)", url: "https://spring.io/projects/spring-data-redis", kind: "doc" }
     ],
     project: "Redis-Cached E-Commerce Catalog & Rate Limiter",
     requirements: [
@@ -906,8 +911,8 @@ const backendStages = [
       "Handle poison messages without stalling the pipeline"
     ],
     resources: [
-      { title: "Apache Kafka Documentation (free, official)", url: "https://kafka.apache.org/documentation/" },
-      { title: "Spring for Apache Kafka (free, official)", url: "https://spring.io/projects/spring-kafka" }
+      { title: "Apache Kafka Documentation (free, official)", url: "https://kafka.apache.org/documentation/", kind: "doc" },
+      { title: "Spring for Apache Kafka (free, official)", url: "https://spring.io/projects/spring-kafka", kind: "doc" }
     ],
     project: "Event-Driven E-Commerce Processing Pipeline",
     requirements: [
@@ -955,8 +960,8 @@ const backendStages = [
       "Enforce style and static analysis so reviews focus on logic"
     ],
     resources: [
-      { title: "Refactoring Guru — Refactoring & Design Patterns (free)", url: "https://refactoring.guru/" },
-      { title: "Google Java Style Guide (free)", url: "https://google.github.io/styleguide/javaguide.html" }
+      { title: "Refactoring Guru — Refactoring & Design Patterns (free)", url: "https://refactoring.guru/", kind: "course" },
+      { title: "Google Java Style Guide (free)", url: "https://google.github.io/styleguide/javaguide.html", kind: "doc" }
     ],
     project: "Clean-Code Refactoring of E-Commerce Monolith",
     requirements: [
@@ -1003,8 +1008,8 @@ const backendStages = [
       "Keep dependencies pointing inward toward the domain"
     ],
     resources: [
-      { title: "Refactoring Guru — SOLID Principles (free)", url: "https://refactoring.guru/refactoring/solid-principles" },
-      { title: "Baeldung — SOLID Principles in Java (free)", url: "https://www.baeldung.com/solid-principles" }
+      { title: "Refactoring Guru — SOLID Principles (free)", url: "https://refactoring.guru/refactoring/solid-principles", kind: "course" },
+      { title: "Baeldung — SOLID Principles in Java (free)", url: "https://www.baeldung.com/solid-principles", kind: "doc" }
     ],
     project: "SOLID-Compliant Payment & Notification Subsystem",
     requirements: [
@@ -1046,7 +1051,7 @@ const backendStages = [
       "Explain the cost each pattern adds"
     ],
     resources: [
-      { title: "Refactoring Guru — Design Patterns (free)", url: "https://refactoring.guru/design-patterns" }
+      { title: "Refactoring Guru — Design Patterns (free)", url: "https://refactoring.guru/design-patterns", kind: "course" }
     ],
     project: "Design-Pattern-Enhanced Order & Discount Engine",
     requirements: [
@@ -1091,9 +1096,9 @@ const backendStages = [
       "Explain when you would split a module into a service — and when you would not"
     ],
     resources: [
-      { title: "Martin Fowler — Architecture Guides (free)", url: "https://martinfowler.com/architecture/" },
-      { title: "Clean Architecture overview articles by Robert C. Martin", url: "https://blog.cleancoder.com/2015/12/08/clean-architecture.html" },
-      { title: "Baeldung — Clean Architecture in Java (free)", url: "https://www.baeldung.com/clean-architecture-introduction" }
+      { title: "Martin Fowler — Architecture Guides (free)", url: "https://martinfowler.com/architecture/", kind: "doc" },
+      { title: "Clean Architecture overview articles by Robert C. Martin", url: "https://blog.cleancoder.com/2015/12/08/clean-architecture.html", kind: "doc" },
+      { title: "Baeldung — Clean Architecture in Java (free)", url: "https://www.baeldung.com/clean-architecture-introduction", kind: "doc" }
     ],
     project: "Modular Monolith E-Commerce Application",
     requirements: [
@@ -1140,8 +1145,8 @@ const backendStages = [
       "Write a design doc that a reviewer can challenge"
     ],
     resources: [
-      { title: "System Design Primer (free, GitHub)", url: "https://github.com/donnemartin/system-design-primer" },
-      { title: "High Scalability (free, patterns catalogue)", url: "https://highscalability.com/" }
+      { title: "System Design Primer (free, GitHub)", url: "https://github.com/donnemartin/system-design-primer", kind: "course" },
+      { title: "High Scalability (free, patterns catalogue)", url: "https://highscalability.com/", kind: "doc" }
     ],
     project: "End-to-End System Design Architectures",
     requirements: [
@@ -1189,7 +1194,7 @@ const backendStages = [
       "Debug a containerised service from the host"
     ],
     resources: [
-      { title: "Docker — Get Started (free, official)", url: "https://docs.docker.com/get-started/" }
+      { title: "Docker — Get Started (free, official)", url: "https://docs.docker.com/get-started/", kind: "course" }
     ],
     project: "Fully Containerized E-Commerce Ecosystem",
     requirements: [
@@ -1239,8 +1244,8 @@ const backendStages = [
       "Read a CloudWatch alarm and know what to do next"
     ],
     resources: [
-      { title: "AWS Skill Builder — free courses (official)", url: "https://skillbuilder.aws/" },
-      { title: "AWS Documentation (free, official)", url: "https://docs.aws.amazon.com/" }
+      { title: "AWS Skill Builder — free courses (official)", url: "https://skillbuilder.aws/", kind: "course" },
+      { title: "AWS Documentation (free, official)", url: "https://docs.aws.amazon.com/", kind: "doc" }
     ],
     project: "Cloud-Deployed E-Commerce Backend on AWS",
     requirements: [
@@ -1289,7 +1294,7 @@ const backendStages = [
       "Roll back a bad release in one command"
     ],
     resources: [
-      { title: "GitHub Actions Documentation (free, official)", url: "https://docs.github.com/en/actions" }
+      { title: "GitHub Actions Documentation (free, official)", url: "https://docs.github.com/en/actions", kind: "doc" }
     ],
     project: "Production CI/CD Pipeline with GitHub Actions",
     requirements: [
@@ -1339,7 +1344,7 @@ const backendStages = [
       "Scale under load and explain what the autoscaler reacts to"
     ],
     resources: [
-      { title: "Kubernetes Documentation & Tutorials (free, official)", url: "https://kubernetes.io/docs/tutorials/" }
+      { title: "Kubernetes Documentation & Tutorials (free, official)", url: "https://kubernetes.io/docs/tutorials/", kind: "course" }
     ],
     project: "Kubernetes Manifests & Local Cluster Deployment",
     requirements: [
@@ -1387,9 +1392,9 @@ const backendStages = [
       "Write a dashboard a teammate can read without asking you"
     ],
     resources: [
-      { title: "Prometheus Documentation (free, official)", url: "https://prometheus.io/docs/" },
-      { title: "Grafana Documentation (free, official)", url: "https://grafana.com/docs/" },
-      { title: "OpenTelemetry Documentation (free, official)", url: "https://opentelemetry.io/docs/" }
+      { title: "Prometheus Documentation (free, official)", url: "https://prometheus.io/docs/", kind: "doc" },
+      { title: "Grafana Documentation (free, official)", url: "https://grafana.com/docs/", kind: "doc" },
+      { title: "OpenTelemetry Documentation (free, official)", url: "https://opentelemetry.io/docs/", kind: "doc" }
     ],
     project: "Full Observability Stack with Prometheus & Grafana",
     requirements: [
@@ -1438,8 +1443,8 @@ const backendStages = [
       "Explain to a stakeholder why an LLM feature can be slow and expensive"
     ],
     resources: [
-      { title: "Google Machine Learning Crash Course (free)", url: "https://developers.google.com/machine-learning/crash-course" },
-      { title: "OpenAI API Documentation (free)", url: "https://platform.openai.com/docs/" }
+      { title: "Google Machine Learning Crash Course (free)", url: "https://developers.google.com/machine-learning/crash-course", kind: "course" },
+      { title: "OpenAI API Documentation (free)", url: "https://platform.openai.com/docs/", kind: "doc" }
     ],
     project: "AI Tokens & LLM Cost Calculation Utility",
     requirements: [
@@ -1487,9 +1492,9 @@ const backendStages = [
       "Handle provider outages and rate limits without a 500 storm"
     ],
     resources: [
-      { title: "Spring AI Reference Documentation (free, official)", url: "https://docs.spring.io/spring-ai/reference/" },
-      { title: "OpenAI API Documentation (free)", url: "https://platform.openai.com/docs/" },
-      { title: "Anthropic Docs — API (free)", url: "https://docs.anthropic.com/en/api" }
+      { title: "Spring AI Reference Documentation (free, official)", url: "https://docs.spring.io/spring-ai/reference/", kind: "doc" },
+      { title: "OpenAI API Documentation (free)", url: "https://platform.openai.com/docs/", kind: "doc" },
+      { title: "Anthropic Docs — API (free)", url: "https://docs.anthropic.com/en/api", kind: "doc" }
     ],
     project: "AI-Powered Customer Support API",
     requirements: [
@@ -1538,8 +1543,8 @@ const backendStages = [
       "Prove a prompt change did not regress behaviour with automated tests"
     ],
     resources: [
-      { title: "OpenAI — Prompt Engineering Guide (free)", url: "https://platform.openai.com/docs/guides/prompt-engineering" },
-      { title: "OWASP — Prompt Injection guidance (free)", url: "https://genai.owasp.org/" }
+      { title: "OpenAI — Prompt Engineering Guide (free)", url: "https://platform.openai.com/docs/guides/prompt-engineering", kind: "doc" },
+      { title: "OWASP — Prompt Injection guidance (free)", url: "https://genai.owasp.org/", kind: "doc" }
     ],
     project: "Secure & Standardized Prompt Engine",
     requirements: [
@@ -1589,8 +1594,8 @@ const backendStages = [
       "Diagnose whether a bad answer came from bad retrieval or bad generation"
     ],
     resources: [
-      { title: "Spring AI — Retrieval-Augmented Generation (free, official)", url: "https://docs.spring.io/spring-ai/reference/api/retrieval-augmented-generation.html" },
-      { title: "pgvector — Official README (free)", url: "https://github.com/pgvector/pgvector" }
+      { title: "Spring AI — Retrieval-Augmented Generation (free, official)", url: "https://docs.spring.io/spring-ai/reference/api/retrieval-augmented-generation.html", kind: "doc" },
+      { title: "pgvector — Official README (free)", url: "https://github.com/pgvector/pgvector", kind: "doc" }
     ],
     project: "Enterprise Document RAG Knowledge Assistant",
     requirements: [
@@ -1641,9 +1646,9 @@ const backendStages = [
       "Test tool selection without relying on the model's mood"
     ],
     resources: [
-      { title: "OpenAI — Function Calling Guide (free)", url: "https://platform.openai.com/docs/guides/function-calling" },
-      { title: "Spring AI — Tool Calling (free, official)", url: "https://docs.spring.io/spring-ai/reference/api/tools.html" },
-      { title: "OWASP — LLM Top 10 (free)", url: "https://genai.owasp.org/llm-top-10/" }
+      { title: "OpenAI — Function Calling Guide (free)", url: "https://platform.openai.com/docs/guides/function-calling", kind: "doc" },
+      { title: "Spring AI — Tool Calling (free, official)", url: "https://docs.spring.io/spring-ai/reference/api/tools.html", kind: "doc" },
+      { title: "OWASP — LLM Top 10 (free)", url: "https://genai.owasp.org/llm-top-10/", kind: "doc" }
     ],
     project: "AI Order & Inventory Tool Engine",
     requirements: [
@@ -1693,8 +1698,8 @@ const backendStages = [
       "Insert a human approval step that genuinely blocks a sensitive action"
     ],
     resources: [
-      { title: "Hugging Face Agents Course (free)", url: "https://huggingface.co/learn/agents-course/en/unit0/introduction" },
-      { title: "LangChain Agents How-Tos (free)", url: "https://python.langchain.com/docs/how_to/agents/" }
+      { title: "Hugging Face Agents Course (free)", url: "https://huggingface.co/learn/agents-course/en/unit0/introduction", kind: "course" },
+      { title: "LangChain Agents How-Tos (free)", url: "https://python.langchain.com/docs/how_to/agents/", kind: "doc" }
     ],
     project: "Autonomous E-Commerce Sales & Support Agent",
     requirements: [
@@ -1745,9 +1750,9 @@ const backendStages = [
       "Secure the server so only authorised clients can invoke operations"
     ],
     resources: [
-      { title: "Model Context Protocol — Official Documentation (free)", url: "https://modelcontextprotocol.io/" },
-      { title: "MCP Specification (GitHub, free)", url: "https://github.com/modelcontextprotocol" },
-      { title: "Spring AI — MCP Support (free, official)", url: "https://docs.spring.io/spring-ai/reference/api/mcp/mcp-overview.html" }
+      { title: "Model Context Protocol — Official Documentation (free)", url: "https://modelcontextprotocol.io/", kind: "doc" },
+      { title: "MCP Specification (GitHub, free)", url: "https://github.com/modelcontextprotocol", kind: "doc" },
+      { title: "Spring AI — MCP Support (free, official)", url: "https://docs.spring.io/spring-ai/reference/api/mcp/mcp-overview.html", kind: "doc" }
     ],
     project: "Custom Spring Boot MCP Server for Enterprise Systems",
     requirements: [
@@ -1797,8 +1802,8 @@ const backendStages = [
       "Enforce per-tenant cost ceilings so one customer cannot drain the budget"
     ],
     resources: [
-      { title: "OWASP — Top 10 for LLM Applications (free)", url: "https://owasp.org/www-project-top-10-for-large-language-model-applications/" },
-      { title: "Spring AI — Observability / Caching (free, official)", url: "https://docs.spring.io/spring-ai/reference/api/chat-memory.html" }
+      { title: "OWASP — Top 10 for LLM Applications (free)", url: "https://owasp.org/www-project-top-10-for-large-language-model-applications/", kind: "doc" },
+      { title: "Spring AI — Observability / Caching (free, official)", url: "https://docs.spring.io/spring-ai/reference/api/chat-memory.html", kind: "doc" }
     ],
     project: "Hardened Production AI Gateway Subsystem",
     requirements: [
@@ -1850,10 +1855,10 @@ const backendStages = [
       "Explain every architectural decision and its alternative in a written design doc"
     ],
     resources: [
-      { title: "Spring Boot Reference (free, official)", url: "https://docs.spring.io/spring-boot/docs/current/reference/html/" },
-      { title: "Spring AI Reference (free, official)", url: "https://docs.spring.io/spring-ai/reference/" },
-      { title: "Model Context Protocol Docs (free, official)", url: "https://modelcontextprotocol.io/" },
-      { title: "System Design Primer (free)", url: "https://github.com/donnemartin/system-design-primer" }
+      { title: "Spring Boot Reference (free, official)", url: "https://docs.spring.io/spring-boot/docs/current/reference/html/", kind: "doc" },
+      { title: "Spring AI Reference (free, official)", url: "https://docs.spring.io/spring-ai/reference/", kind: "doc" },
+      { title: "Model Context Protocol Docs (free, official)", url: "https://modelcontextprotocol.io/", kind: "doc" },
+      { title: "System Design Primer (free)", url: "https://github.com/donnemartin/system-design-primer", kind: "course" }
     ],
     project: "Enterprise AI E-Commerce Platform",
     requirements: [

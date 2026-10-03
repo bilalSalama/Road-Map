@@ -18,11 +18,13 @@
 // Each stage: { id, track, title, description, topics: string[], project: string }
 // -------------------------------------------------------------------------
 
-const frontendStages = [{
+const frontendStages = [
+  {
     id: "stage-1",
     track: "frontend",
     title: "Computer Science Foundations",
-    description: "Core CS concepts every developer should understand before diving into a framework.",
+    description:
+      "Core CS concepts every developer should understand before diving into a framework.",
     topics: [
       "How computers execute programs",
       "Memory: stack vs heap",
@@ -30,9 +32,9 @@ const frontendStages = [{
       "What is an API?",
       "Client-server architecture",
       "JSON & data interchange",
-      "Command line basics"
+      "Command line basics",
     ],
-    project: "Trace an HTTP request from browser to server and back"
+    project: "Trace an HTTP request from browser to server and back",
   },
 
   // --- 2. Programming Fundamentals ---
@@ -40,7 +42,8 @@ const frontendStages = [{
     id: "stage-2",
     track: "frontend",
     title: "Programming Fundamentals",
-    description: "Universal programming concepts: variables, control flow, functions, and problem-solving.",
+    description:
+      "Universal programming concepts: variables, control flow, functions, and problem-solving.",
     topics: [
       "Variables & constants",
       "Data types (primitives, strings, booleans)",
@@ -49,9 +52,9 @@ const frontendStages = [{
       "Loops (for, foreach, while)",
       "Functions & parameters",
       "Scope & lifetime",
-      "Basic debugging"
+      "Basic debugging",
     ],
-    project: "Build a console calculator and a number guessing game"
+    project: "Build a console calculator and a number guessing game",
   },
 
   // --- 3. Web Fundamentals ---
@@ -59,7 +62,8 @@ const frontendStages = [{
     id: "stage-3",
     track: "frontend",
     title: "Web Fundamentals",
-    description: "How the web works — essential knowledge for both frontend and backend.",
+    description:
+      "How the web works — essential knowledge for both frontend and backend.",
     topics: [
       "HTML structure & semantic elements",
       "CSS selectors, box model, flexbox, grid",
@@ -67,9 +71,9 @@ const frontendStages = [{
       "HTTP methods (GET, POST, PUT, DELETE)",
       "Status codes (200, 404, 500, etc.)",
       "Browser dev tools",
-      "How a browser renders a page"
+      "How a browser renders a page",
     ],
-    project: "Build a static multi-page website from scratch"
+    project: "Build a static multi-page website from scratch",
   },
 
   // --- 4. Git & Professional Development ---
@@ -77,7 +81,8 @@ const frontendStages = [{
     id: "stage-4",
     track: "frontend",
     title: "Git & Professional Development",
-    description: "Version control, collaboration, and the habits of a professional developer.",
+    description:
+      "Version control, collaboration, and the habits of a professional developer.",
     topics: [
       "Git init, add, commit, status",
       "Branching & merging",
@@ -86,9 +91,9 @@ const frontendStages = [{
       "GitHub repositories & pull requests",
       "Git ignore (.gitignore)",
       "Writing good commit messages",
-      "Reading documentation effectively"
+      "Reading documentation effectively",
     ],
-    project: "Create a GitHub portfolio and commit daily"
+    project: "Create a GitHub portfolio and commit daily",
   },
 
   // --- 5. Frontend Foundations — HTML & CSS ---
@@ -96,7 +101,8 @@ const frontendStages = [{
     id: "stage-5",
     track: "frontend",
     title: "Frontend Foundations — HTML & CSS",
-    description: "Build the visual layer of web applications with semantic HTML and modern CSS.",
+    description:
+      "Build the visual layer of web applications with semantic HTML and modern CSS.",
     topics: [
       "Semantic HTML5 elements",
       "Forms, inputs, and validation attributes",
@@ -106,9 +112,9 @@ const frontendStages = [{
       "CSS Grid layout",
       "Responsive design with media queries",
       "CSS variables & custom properties",
-      "Animations & transitions basics"
+      "Animations & transitions basics",
     ],
-    project: "Build a responsive landing page"
+    project: "Build a responsive landing page",
   },
 
   // --- 6. JavaScript Fundamentals ---
@@ -127,9 +133,9 @@ const frontendStages = [{
       "ES modules (import/export)",
       "Async JavaScript (callbacks, promises, async/await)",
       "Fetch API & consuming REST APIs",
-      "Error handling (try/catch)"
+      "Error handling (try/catch)",
     ],
-    project: "Fetch and display data from a public API"
+    project: "Fetch and display data from a public API",
   },
 
   // --- 7. TypeScript Basics ---
@@ -137,7 +143,8 @@ const frontendStages = [{
     id: "stage-7",
     track: "frontend",
     title: "TypeScript Basics",
-    description: "Add static typing to JavaScript for safer, more maintainable code.",
+    description:
+      "Add static typing to JavaScript for safer, more maintainable code.",
     topics: [
       "Type annotations (strings, numbers, booleans)",
       "Arrays & tuples",
@@ -148,9 +155,9 @@ const frontendStages = [{
       "Enums",
       "Type inference",
       "tsconfig.json basics",
-      "Compiling TypeScript to JavaScript"
+      "Compiling TypeScript to JavaScript",
     ],
-    project: "Convert a JavaScript project to TypeScript"
+    project: "Convert a JavaScript project to TypeScript",
   },
 
   // --- 8. React Fundamentals ---
@@ -169,9 +176,9 @@ const frontendStages = [{
       "Lists & keys",
       "Forms in React (controlled components)",
       "Component composition",
-      "React Developer Tools"
+      "React Developer Tools",
     ],
-    project: "Build a task tracker or weather dashboard in React"
+    project: "Build a task tracker or weather dashboard in React",
   },
 
   // --- 9. Advanced React ---
@@ -179,7 +186,8 @@ const frontendStages = [{
     id: "stage-9",
     track: "frontend",
     title: "Advanced React",
-    description: "Go deeper with hooks, side effects, and state management patterns.",
+    description:
+      "Go deeper with hooks, side effects, and state management patterns.",
     topics: [
       "useEffect & side effects",
       "useContext & Context API",
@@ -189,9 +197,9 @@ const frontendStages = [{
       "Performance with useMemo & useCallback",
       "React Router (navigation)",
       " Lifting state up",
-      "Children prop & slots pattern"
+      "Children prop & slots pattern",
     ],
-    project: "Multi-page React app with shared state"
+    project: "Multi-page React app with shared state",
   },
 
   // --- 10. Next.js Fundamentals ---
@@ -199,7 +207,8 @@ const frontendStages = [{
     id: "stage-10",
     track: "frontend",
     title: "Next.js Fundamentals",
-    description: "Production React framework with server-side rendering and file-based routing.",
+    description:
+      "Production React framework with server-side rendering and file-based routing.",
     topics: [
       "Next.js project structure",
       "File-based routing (App Router)",
@@ -210,9 +219,9 @@ const frontendStages = [{
       "Static generation vs server rendering",
       "Metadata & SEO basics",
       "API routes (serverless functions)",
-      "Image optimization"
+      "Image optimization",
     ],
-    project: "Build a blog or portfolio site with Next.js"
+    project: "Build a blog or portfolio site with Next.js",
   },
 
   // --- 11. Tailwind CSS ---
@@ -220,7 +229,8 @@ const frontendStages = [{
     id: "stage-11",
     track: "frontend",
     title: "Tailwind CSS",
-    description: "Utility-first CSS framework for rapidly building custom interfaces.",
+    description:
+      "Utility-first CSS framework for rapidly building custom interfaces.",
     topics: [
       "Tailwind setup & configuration",
       "Utility classes (spacing, colors, typography)",
@@ -230,9 +240,9 @@ const frontendStages = [{
       "Customizing the theme",
       "Component extraction patterns",
       "Hover, focus, & state variants",
-      "Animation utilities"
+      "Animation utilities",
     ],
-    project: "Redesign a previous project with Tailwind"
+    project: "Redesign a previous project with Tailwind",
   },
 
   // --- 12. TanStack Query (React Query) ---
@@ -240,7 +250,8 @@ const frontendStages = [{
     id: "stage-12",
     track: "frontend",
     title: "TanStack Query",
-    description: "Powerful data-fetching and server-state management for React.",
+    description:
+      "Powerful data-fetching and server-state management for React.",
     topics: [
       "QueryClient & QueryClientProvider",
       "useQuery for fetching data",
@@ -250,9 +261,9 @@ const frontendStages = [{
       "Optimistic updates",
       "Query invalidation",
       "Infinite queries / pagination",
-      "Devtools"
+      "Devtools",
     ],
-    project: "Data dashboard with caching and mutations"
+    project: "Data dashboard with caching and mutations",
   },
 
   // --- 13. Form Handling — React Hook Form & Zod ---
@@ -269,9 +280,9 @@ const frontendStages = [{
       "Default values & initial form state",
       "Dependent fields",
       "File uploads",
-      "Schema refactoring & reusability"
+      "Schema refactoring & reusability",
     ],
-    project: "Multi-step registration form with validation"
+    project: "Multi-step registration form with validation",
   },
 
   // --- 14. Frontend Testing ---
@@ -279,7 +290,8 @@ const frontendStages = [{
     id: "stage-14",
     track: "frontend",
     title: "Frontend Testing",
-    description: "Ensure your frontend code works as expected with automated tests.",
+    description:
+      "Ensure your frontend code works as expected with automated tests.",
     topics: [
       "Testing philosophy (unit vs integration vs e2e)",
       "Vitest or Jest basics",
@@ -288,9 +300,9 @@ const frontendStages = [{
       "Querying & asserting DOM",
       "Mocking functions & modules",
       "Testing custom hooks",
-      "End-to-end testing with Playwright or Cypress (intro)"
+      "End-to-end testing with Playwright or Cypress (intro)",
     ],
-    project: "Write tests for a React component and a custom hook"
+    project: "Write tests for a React component and a custom hook",
   },
 
   // --- 15. Frontend Performance & Accessibility ---
@@ -308,10 +320,10 @@ const frontendStages = [{
       "Bundle size & code splitting",
       "Lazy loading & Suspense",
       "Core Web Vitals",
-      "Memoization & re-render optimization"
+      "Memoization & re-render optimization",
     ],
-    project: "Audit and improve an existing app's performance & a11y"
-  }
+    project: "Audit and improve an existing app's performance & a11y",
+  },
 ];
 
 // -------------------------------------------------------------------------
@@ -395,6 +407,61 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // -------------------------------------------------------------------------
+// Resource Buttons (Documentation / Course)
+// -------------------------------------------------------------------------
+
+const RESOURCE_KIND_LABEL = {
+  doc: { label: "Docs", icon: "\u{1F4D6}", title: "Documentation" },
+  course: { label: "Course", icon: "\u{1F393}", title: "Course" },
+};
+
+/**
+ * Render one clickable button per resource for a stage.
+ * Each button opens the resource in a new tab and is labelled by its kind:
+ * "doc" for reference documentation, "course" for guided learning material.
+ */
+function renderResourceButtons(resources) {
+  if (!resources || !resources.length) return "";
+
+  const button = (r) => {
+    const kind = RESOURCE_KIND_LABEL[r.kind] || RESOURCE_KIND_LABEL.doc;
+    return `
+            <a class="resource-btn ${r.kind === "course" ? "course" : "doc"}"
+               href="${escapeHtml(r.url)}"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="${kind.title}: ${escapeHtml(r.title)}">
+              <span class="resource-btn-icon" aria-hidden="true">${kind.icon}</span>
+              <span class="resource-btn-label">${kind.label}</span>
+              <span class="resource-btn-title">${escapeHtml(r.title)}</span>
+            </a>`;
+  };
+
+  const docs = resources.filter((r) => r.kind !== "course").map(button);
+  const courses = resources.filter((r) => r.kind === "course").map(button);
+
+  const group = (title, buttons) =>
+    buttons.length
+      ? `
+        <div class="resource-group">
+          <span class="resource-group-label">${title}</span>
+          <div class="resource-btns">${buttons.join("")}</div>
+        </div>`
+      : "";
+
+  const body =
+    group("Free Documentation", docs) + group("Free Courses", courses);
+
+  if (!body) return "";
+
+  return `
+        <div class="detail-section">
+          <span class="detail-label">Free Learning Resources</span>
+          ${body}
+        </div>`;
+}
+
+// -------------------------------------------------------------------------
 // Render Roadmap Cards
 // -------------------------------------------------------------------------
 
@@ -427,8 +494,14 @@ function renderRoadmap() {
             </div>`;
     };
 
-    const topicsHtml = items.filter((i) => i.kind === "topic").map(renderItem).join("");
-    const checklistHtml = items.filter((i) => i.kind === "check").map(renderItem).join("");
+    const topicsHtml = items
+      .filter((i) => i.kind === "topic")
+      .map(renderItem)
+      .join("");
+    const checklistHtml = items
+      .filter((i) => i.kind === "check")
+      .map(renderItem)
+      .join("");
 
     // Backend stages carry richer metadata: goal, outcomes, resources, requirements
     const goalHtml = stage.goal
@@ -448,23 +521,10 @@ function renderRoadmap() {
             ${stage.outcomes.map((o) => `<li>${escapeHtml(o)}</li>`).join("")}
           </ul>
         </div>`
-      : "";
+        : "";
 
-    const resourcesHtml =
-      stage.resources && stage.resources.length
-        ? `
-        <div class="detail-section">
-          <span class="detail-label">Free Learning Resources</span>
-          <ul class="resources-list">
-            ${stage.resources
-              .map(
-                (r) =>
-                  `<li><a href="${escapeHtml(r.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(r.title)}</a></li>`
-              )
-              .join("")}
-          </ul>
-        </div>`
-      : "";
+    // Documentation / Course buttons, one per resource, grouped by kind
+    const resourcesHtml = renderResourceButtons(stage.resources);
 
     const requirementsHtml =
       stage.requirements && stage.requirements.length
@@ -492,7 +552,9 @@ function renderRoadmap() {
       ? `<div class="stage-description">${escapeHtml(stage.description)}</div>`
       : "";
 
-    const numberLabel = stage.id.replace(/^backend-stage-/, "B").replace(/^stage-/, "");
+    const numberLabel = stage.id
+      .replace(/^backend-stage-/, "B")
+      .replace(/^stage-/, "");
 
     card.innerHTML = `
       <div class="stage-header">
@@ -504,7 +566,9 @@ function renderRoadmap() {
             <span class="stage-progress-text">${stageCompletedCount}/${stageItemCount} items</span>
             <div class="stage-progress-bar-container">
               <div class="stage-progress-bar" style="width: ${
-                stageItemCount === 0 ? 0 : (stageCompletedCount / stageItemCount) * 100
+                stageItemCount === 0
+                  ? 0
+                  : (stageCompletedCount / stageItemCount) * 100
               }%"></div>
             </div>
           </div>
@@ -513,12 +577,12 @@ function renderRoadmap() {
       </div>
       <div class="stage-details">
         ${goalHtml}
+        ${resourcesHtml}
         <div class="detail-section">
           <span class="detail-label">Topics to Learn &mdash; check each item</span>
           <div class="topics-list">${topicsHtml}</div>
         </div>
         ${outcomesHtml}
-        ${resourcesHtml}
         <div class="detail-section">
           <span class="detail-label">Practical Project</span>
           <ul class="projects-list">
@@ -606,7 +670,8 @@ function countStageCompleted(stageId) {
   const stage = roadmapStages.find((s) => s.id === stageId);
   if (!stage) return 0;
   const items = stageItems(stage);
-  return items.filter((item) => completedItems.has(`${stageId}:${item.id}`)).length;
+  return items.filter((item) => completedItems.has(`${stageId}:${item.id}`))
+    .length;
 }
 
 // -------------------------------------------------------------------------
@@ -634,7 +699,8 @@ function updateProgressBar() {
     });
   });
 
-  const percent = totalItems === 0 ? 0 : Math.round((completedCount / totalItems) * 100);
+  const percent =
+    totalItems === 0 ? 0 : Math.round((completedCount / totalItems) * 100);
 
   if (progressBar) {
     progressBar.style.width = `${percent}%`;

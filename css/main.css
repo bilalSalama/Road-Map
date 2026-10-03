@@ -1,52 +1,36 @@
 /* ============================================
    RoadMap — Main Stylesheet
-   Dark Theme · Deep Orange + Blue Gray + Gray
+   Shared styles for both roadmap tracks (frontend + Java backend).
    ============================================ */
 
 /* --- CSS Variables --- */
 :root {
-  /* ---- Backgrounds (Blue Gray family) ---- */
-  --bg-primary: #263238;
-  /* Blue Gray 900 — deepest surface */
-  --bg-secondary: #37474F;
-  /* Blue Gray 800 — elevated panels */
+  /* ---- Backgrounds (surfaces) ---- */
+  --bg-primary: #041016;
+  --bg-secondary: #263238;
   --bg-card: #455A64;
-  /* Blue Gray 700 — cards */
-  --bg-card-hover: #546E7A;
-  /* Blue Gray 600 — card hover */
+  --bg-card-hover: #607D8B;
   --bg-input: #263238;
-  /* Blue Gray 900 — input fields */
   --bg-elevated: #37474F;
-  /* Blue Gray 800 — modals, overlays */
 
-  /* ---- Text (Gray family, light → dark) ---- */
-  --text-primary: #FAFAFA;
-  /* Gray 50   — headings, strong text */
+  /* ---- Text (light → muted) ---- */
+  --text-primary: white;
   --text-secondary: #E0E0E0;
-  /* Gray 300  — body, labels */
   --text-muted: #9E9E9E;
-  /* Gray 500  — placeholders, hints */
 
-  /* ---- Accent (Deep Orange family) ---- */
-  --accent-primary: #FF5722;
-  /* Deep Orange 500 — main accent */
-  --accent-hover: #F4511E;
-  /* Deep Orange 700 — hover state   */
+  /* ---- Accent ---- */
+  --accent-primary: #263238;
+  --accent-hover: #82B1FF;
   --accent-glow: rgba(255, 87, 34, 0.22);
 
-  /* ---- Semantic tones (sourced from palette) ---- */
-  --accent-success: #FFAB91;
-  /* Deep Orange 300 — completed, done */
-  --accent-warning: #A1887F;
-  /* Brown 400       — warnings       */
+  /* ---- Semantic tones ---- */
+  --accent-success: white;
+  --accent-warning: #263238;
   --accent-danger: #E64A19;
-  /* Deep Orange 700 — danger, delete */
 
-  /* ---- Borders (Blue Gray / Gray) ---- */
+  /* ---- Borders ---- */
   --border-color: #546E7A;
-  /* Blue Gray 600 — primary borders */
   --border-light: #607D8B;
-  /* Blue Gray 500 — subtle borders  */
 
   /* ---- Shadows ---- */
   --shadow: 0 4px 16px rgba(0, 0, 0, 0.55);
@@ -60,7 +44,7 @@
   --transition: 0.2s ease;
   --transition-slow: 0.35s ease;
 
-  /* ---- Typography (slightly larger than default) ---- */
+  /* ---- Typography ---- */
   --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   --font-mono: "SF Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
@@ -198,32 +182,6 @@ a:hover {
   box-shadow: 0 2px 8px var(--accent-glow);
 }
 
-.navbar-nav {
-  display: flex;
-  gap: 0.5rem;
-  list-style: none;
-}
-
-.navbar-nav a {
-  color: var(--text-secondary);
-  padding: 0.6rem 1.1rem;
-  border-radius: var(--radius-sm);
-  font-weight: 500;
-  font-size: var(--text-sm);
-  transition: all var(--transition);
-}
-
-.navbar-nav a:hover {
-  color: var(--text-primary);
-  background-color: var(--bg-card);
-}
-
-.navbar-nav a.active {
-  color: var(--accent-primary);
-  background-color: var(--bg-card);
-  box-shadow: inset 0 0 0 1px var(--accent-primary);
-}
-
 /* ============================================
    Layout
    ============================================ */
@@ -274,6 +232,7 @@ a:hover {
   border: 1px solid rgba(255, 87, 34, 0.28);
   letter-spacing: 0.02em;
   position: relative;
+  color: wheat;
   z-index: 1;
 }
 
@@ -671,36 +630,89 @@ a:hover {
   margin: 0;
 }
 
-.resources-list {
-  list-style: none;
-  padding-left: 0;
+/* Resource buttons use fixed, self-contained colours so they stay readable
+   regardless of the accent colour configured in :root. */
+.resource-group {
+  margin-bottom: 0.85rem;
 }
 
-.resources-list li {
-  position: relative;
-  padding-left: 1.4rem;
-  margin-bottom: 0.45rem;
+.resource-group:last-child {
+  margin-bottom: 0;
 }
 
-.resources-list li::before {
-  content: "↗";
-  position: absolute;
-  left: 0;
-  color: var(--accent-primary);
+.resource-group-label {
+  display: block;
+  font-size: var(--text-xs);
   font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.45rem;
+  letter-spacing: 0.04em;
 }
 
-.resources-list a {
+.resource-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.resource-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
   color: var(--text-primary);
   text-decoration: none;
-  border-bottom: 1px solid var(--border-color);
-  transition: color var(--transition), border-color var(--transition);
-  word-break: break-word;
+  font-size: var(--text-xs);
+  line-height: 1.3;
+  transition: border-color var(--transition), background var(--transition),
+    color var(--transition), transform var(--transition);
 }
 
-.resources-list a:hover {
-  color: var(--accent-primary);
-  border-bottom-color: var(--accent-primary);
+.resource-btn:hover {
+  border-color: #FF7043;
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.resource-btn:focus-visible {
+  outline: 2px solid #FF7043;
+  outline-offset: 2px;
+}
+
+.resource-btn-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.resource-btn-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #FF8A65;
+}
+
+.resource-btn.course {
+  border-color: #4E7BB5;
+}
+
+.resource-btn.course:hover {
+  border-color: #82B1FF;
+}
+
+.resource-btn.course .resource-btn-label {
+  color: #82B1FF;
+}
+
+.resource-btn-title {
+  max-width: 22rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-secondary);
 }
 
 .requirements-list li {
@@ -726,27 +738,6 @@ a:hover {
 
 .stage-card.backend .detail-label {
   color: var(--accent-success);
-}
-
-/* ============================================
-   Empty State
-   ============================================ */
-.empty-state {
-  text-align: center;
-  padding: 4rem 2rem;
-  color: var(--text-muted);
-}
-
-.empty-state .empty-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1.25rem;
-  opacity: 0.4;
-}
-
-.empty-state h3 {
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-  font-size: var(--text-xl);
 }
 
 /* ============================================
@@ -815,11 +806,6 @@ a:hover {
 
   .hero p {
     font-size: var(--text-base);
-  }
-
-  .navbar-nav a {
-    padding: 0.4rem 0.7rem;
-    font-size: var(--text-xs);
   }
 
   .progress-header {
