@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Roadmap</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/multi-page.css">
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- Navigation Bar -->
+  <!-- ============================================ -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="icon">R</div>
+      <span>RoadMap</span>
+    </div>
+    <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <div class="navbar-dropdown">
+      <div class="navbar-nav">
+        <a href="frontend-roadmap.html">Frontend</a>
+        <a href="core-backend-roadmap.html">Core Backend</a>
+        <a href="advanced-backend-roadmap.html">Advanced Backend</a>
+        <a href="cloud-roadmap.html" class="active">Cloud</a>
+        <a href="ai-agents-roadmap.html">AI Agents</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================ -->
+  <!-- Main Content -->
+  <!-- ============================================ -->
+  <main class="page-main">
+    <div class="page-content">
+
+      <!-- Page hero -->
+      <section class="page-hero">
+        <span class="badge">Cloud — 3 stages</span>
+        <h1>Cloud Readiness Roadmap</h1>
+        <p>
+          AWS, containerization, CI/CD, and Kubernetes — the infrastructure that
+          turns a working backend into a scalable, deployable system.
+        </p>
+      </section>
+
+      <!-- Page progress -->
+      <section class="progress-section">
+        <div class="progress-header">
+          <h2>Cloud Progress</h2>
+          <div class="progress-stats">
+            <span id="progress-text">0 / 0 items completed</span>
+          </div>
+        </div>
+        <div class="progress-bar-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div class="progress-footer">
+          <span>Build and deploy cloud-native systems</span>
+          <span id="progress-percent">0%</span>
+        </div>
+      </section>
+
+      <!-- Roadmap Stages -->
+      <h2 class="section-title">Cloud Stages</h2>
+      <div id="roadmap-grid" class="roadmap-grid">
+        <!-- Cards are rendered by JavaScript -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Cloud Roadmap &copy; 2026 &mdash; Built for cloud-native engineers</p>
+  </footer>
+
+  <!-- Backend data (stages 26-28) + shared renderer -->
+  <script src="js/backendStages.js"></script>
+  <script src="js/roadmap.js"></script>
+  <script>
+    window.ROADMAP_STAGES = backendStages.slice(25, 28);
+    window.backendStages = backendStages.slice(25, 28);
+  </script>
+</body>
+</html>

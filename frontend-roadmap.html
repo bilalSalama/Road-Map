@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Roadmap</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/multi-page.css">
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- Navigation Bar -->
+  <!-- ============================================ -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="icon">R</div>
+      <span>RoadMap</span>
+    </div>
+    <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <div class="navbar-dropdown">
+      <div class="navbar-nav">
+        <a href="frontend-roadmap.html" class="active">Frontend</a>
+        <a href="core-backend-roadmap.html">Core Backend</a>
+        <a href="advanced-backend-roadmap.html">Advanced Backend</a>
+        <a href="cloud-roadmap.html">Cloud</a>
+        <a href="ai-agents-roadmap.html">AI Agents</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================ -->
+  <!-- Main Content -->
+  <!-- ============================================ -->
+  <main class="page-main">
+    <div class="page-content">
+
+      <!-- Page hero -->
+      <section class="page-hero">
+        <span class="badge">Frontend — 15 stages</span>
+        <h1>Frontend Roadmap</h1>
+        <p>
+          A complete step-by-step guide from Computer Science foundations to performance,
+          accessibility, and production-ready React. Track every topic you complete.
+        </p>
+      </section>
+
+      <!-- Page progress (per-page percentage) -->
+      <section class="progress-section">
+        <div class="progress-header">
+          <h2>Frontend Progress</h2>
+          <div class="progress-stats">
+            <span id="progress-text">0 / 0 items completed</span>
+          </div>
+        </div>
+        <div class="progress-bar-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div class="progress-footer">
+          <span>Start your frontend journey</span>
+          <span id="progress-percent">0%</span>
+        </div>
+      </section>
+
+      <!-- Roadmap Stages -->
+      <h2 class="section-title">Frontend Stages</h2>
+      <div id="roadmap-grid" class="roadmap-grid">
+        <!-- Cards are rendered by JavaScript -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Frontend Roadmap &copy; 2026 &mdash; Built for aspiring web engineers</p>
+  </footer>
+
+  <!-- Frontend roadmap data -->
+  <script src="js/frontendStages.js"></script>
+  <!-- Shared renderer & state -->
+  <script src="js/roadmap.js"></script>
+  <script>
+    window.ROADMAP_STAGES = frontendStages;
+  </script>
+</body>
+</html>

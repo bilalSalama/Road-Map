@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agents Roadmap</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/multi-page.css">
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- Navigation Bar -->
+  <!-- ============================================ -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="icon">R</div>
+      <span>RoadMap</span>
+    </div>
+    <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <div class="navbar-dropdown">
+      <div class="navbar-nav">
+        <a href="frontend-roadmap.html">Frontend</a>
+        <a href="core-backend-roadmap.html">Core Backend</a>
+        <a href="advanced-backend-roadmap.html">Advanced Backend</a>
+        <a href="cloud-roadmap.html">Cloud</a>
+        <a href="ai-agents-roadmap.html" class="active">AI Agents</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================ -->
+  <!-- Main Content -->
+  <!-- ============================================ -->
+  <main class="page-main">
+    <div class="page-content">
+
+      <!-- Page hero -->
+      <section class="page-hero">
+        <span class="badge">AI Agents — 10 stages (incl. Final Project)</span>
+        <h1>AI Agent Roadmap</h1>
+        <p>
+          AI fundamentals, LLM APIs, prompt engineering, embeddings &amp; RAG,
+          tool calling, autonomous agents, and MCP — integrated into production
+          backend services.
+        </p>
+      </section>
+
+      <!-- Page progress -->
+      <section class="progress-section">
+        <div class="progress-header">
+          <h2>AI Agent Progress</h2>
+          <div class="progress-stats">
+            <span id="progress-text">0 / 0 items completed</span>
+          </div>
+        </div>
+        <div class="progress-bar-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div class="progress-footer">
+          <span>Build AI-powered backend systems</span>
+          <span id="progress-percent">0%</span>
+        </div>
+      </section>
+
+      <!-- Roadmap Stages -->
+      <h2 class="section-title">AI Agent Stages</h2>
+      <div id="roadmap-grid" class="roadmap-grid">
+        <!-- Cards are rendered by JavaScript -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>AI Agent Roadmap &copy; 2026 &mdash; Built for AI-augmented backend engineers</p>
+  </footer>
+
+  <!-- Backend data (stages 29-38) + shared renderer -->
+  <script src="js/backendStages.js"></script>
+  <script src="js/roadmap.js"></script>
+  <script>
+    window.ROADMAP_STAGES = backendStages.slice(28, 38);
+    window.backendStages = backendStages.slice(28, 38);
+  </script>
+</body>
+</html>
