@@ -4,7 +4,7 @@ An interactive, dependency-free learning roadmap for full-stack development, spl
 dedicated pages with no central index/dashboard:
 
 - **Frontend (stages 1–15)** — HTML/CSS, JavaScript, TypeScript, React, Next.js, Tailwind, testing, accessibility.
-- **Core Backend (stages 1–15)** — Java, Spring Boot, SQL/PostgreSQL, security, testing, Redis, Kafka.
+- **Core Backend (stages 1–15)** — C#/.NET, ASP.NET Core, SQL/PostgreSQL, security, testing, Redis, Kafka.
 - **Advanced Backend & Job-Ready (stages 16–25)** — clean code, architecture, design patterns, system design.
 - **Cloud (stages 26–28)** — Docker, AWS, CI/CD, Kubernetes, observability.
 - **AI Agents (stages 29–38, incl. Final Project)** — AI fundamentals, LLM APIs, prompt engineering, RAG,
